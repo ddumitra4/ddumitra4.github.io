@@ -91,9 +91,17 @@
 <div class="content-container">
     <h1>Explicació del codi</h1>
     <p>A continuació explicarem com es transforma el so en color amb un codi</p>
-      pre><code>
+      <pre><code>
         let spectrum=fft.analyze(); //analitza la fft o transformada de fourier ràpida del so per a obtenir el espectre de freqüències i guardar-lo a ''spectrum''
-        let bass=fft.getEnergy(); //obté l'energia dels sons greus que van de 0 a 225
+        let bass=fft.getEnergy("bass"); //obté l'energia dels sons greus que van de 0 a 225
+        let treble=fft.getEnergy("trable");
+        let r=map(bass,0,255,50,255);
+        let g=map(level,o,1,50,255);
+        let b=(treble,0,255,50,255);
+        let spectrum=fft.analyze();
+      </code></pre>
+    <p>
+       El codi que veiem més amunt el que fa és analitzar amb transformades de Fourier.fft significa fast Fourier transform
     <p>A continuació veuràs un llistat amb diferents projectes que farem durant el curs:</p>
     <ul>
         <li>Creació d'una obra d'art geomètrica interactiva que reaccioni a la meva veu a través d'un micròfon i a diferents tecles del teclat, al ratolí, que faci moviments repetitius amb sin i cos, moviments aleatoris amb random... Utilitzarem p5.js.</li>
